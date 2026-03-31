@@ -5,6 +5,29 @@ import {type VideoFeedSourceContext} from '#/screens/VideoFeed/types'
 
 export type {NativeStackScreenProps} from '@react-navigation/native-stack'
 
+// Structured advanced-search filters that ride as sibling URL query params
+// alongside `q`. All optional strings so they map cleanly to route params.
+// See src/screens/Search/searchParams.ts for the param model.
+export type SearchFilterParams = {
+  author?: string
+  mentions?: string
+  domain?: string
+  url?: string
+  tag?: string
+  lang?: string
+  since?: string
+  until?: string
+  replies?: string
+  media?: string
+  video?: string
+  following?: string
+}
+
+export type SearchParams = {
+  q?: string
+  tab?: 'user' | 'profile' | 'feed'
+} & SearchFilterParams
+
 export type CommonNavigatorParams = {
   NotFound: undefined
   Lists: undefined
@@ -19,7 +42,7 @@ export type CommonNavigatorParams = {
   ProfileFollowers: {name: string}
   ProfileFollows: {name: string}
   ProfileKnownFollowers: {name: string}
-  ProfileSearch: {name: string; q?: string}
+  ProfileSearch: {name: string} & SearchParams
   ProfileList: {name: string; rkey: string}
   PostThread: {name: string; rkey: string}
   PostLikedBy: {name: string; rkey: string}
@@ -60,7 +83,7 @@ export type CommonNavigatorParams = {
   AppIconSettings: undefined
   FindContactsSettings: undefined
   InviteScanner: undefined
-  Search: {q?: string; tab?: 'user' | 'profile' | 'feed'}
+  Search: SearchParams
   Hashtag: {tag: string; author?: string}
   Topic: {topic: string}
   MessagesConversation: {conversation: string; embed?: string; accept?: true}
@@ -98,7 +121,7 @@ export type HomeTabNavigatorParams = CommonNavigatorParams & {
 }
 
 export type SearchTabNavigatorParams = CommonNavigatorParams & {
-  Search: {q?: string; tab?: 'user' | 'profile' | 'feed'}
+  Search: SearchParams
 }
 
 export type NotificationsTabNavigatorParams = CommonNavigatorParams & {
@@ -119,7 +142,7 @@ export type MessagesTabNavigatorParams = CommonNavigatorParams & {
 
 export type FlatNavigatorParams = CommonNavigatorParams & {
   Home: undefined
-  Search: {q?: string; tab?: 'user' | 'profile' | 'feed'}
+  Search: SearchParams
   Feeds: undefined
   Notifications: undefined
   Messages: {
@@ -133,7 +156,7 @@ export type AllNavigatorParams = CommonNavigatorParams & {
   HomeTab: undefined
   Home: undefined
   SearchTab: undefined
-  Search: {q?: string; tab?: 'user' | 'profile' | 'feed'}
+  Search: SearchParams
   Feeds: undefined
   NotificationsTab: undefined
   Notifications: undefined

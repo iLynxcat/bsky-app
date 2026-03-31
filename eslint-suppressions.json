@@ -1922,14 +1922,6 @@
       "count": 2
     }
   },
-  "src/state/queries/search-posts.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 2
-    },
-    "@typescript-eslint/no-unsafe-member-access": {
-      "count": 2
-    }
-  },
   "src/state/queries/starter-packs.ts": {
     "@typescript-eslint/require-await": {
       "count": 1
@@ -2181,14 +2173,6 @@
     },
     "@typescript-eslint/no-unsafe-member-access": {
       "count": 2
-    }
-  },
-  "src/view/com/modals/Modal.tsx": {
-    "@typescript-eslint/no-misused-promises": {
-      "count": 1
-    },
-    "@typescript-eslint/require-await": {
-      "count": 1
     }
   },
   "src/view/com/notifications/NotificationFeed.tsx": {

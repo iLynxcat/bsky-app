@@ -147,7 +147,7 @@ export function useOTAUpdates() {
         }
       } catch (err) {
         if (!isNetworkError(err)) {
-          logger.error('OTA Update Error', {safeMessage: err})
+          logger.warn('OTA Update Error', {safeMessage: err})
         }
       }
     }, 10e3)

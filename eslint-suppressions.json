@@ -1124,11 +1124,6 @@
       "count": 1
     }
   },
-  "src/logger/transports/sentry.ts": {
-    "@typescript-eslint/no-unsafe-enum-comparison": {
-      "count": 3
-    }
-  },
   "src/logger/types.ts": {
     "@typescript-eslint/no-redundant-type-constituents": {
       "count": 1

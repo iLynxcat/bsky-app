@@ -289,7 +289,10 @@ export function ChatList({
     isError,
     error,
     refetch,
-  } = useListConvosQuery({status: 'accepted'})
+  } = useListConvosQuery({
+    status: 'accepted',
+    kind: aa.flags.groupChatDisabled ? 'direct' : 'all',
+  })
 
   const {refetch: refetchInbox} = useListConvosQuery({
     status: 'request',
